@@ -32,13 +32,30 @@ const TXCRCR:   u32 = 0x18;
 /* Enumerations */
 // CPHA = 0 READS THE FIRST BIT ON RISING EDGE OF CLOCK, CPHA = 1 READS THE FIRST BIT ON FALLING EDGE OF CLOCK
 // CPOL IS HOW THE CLOCK BEHAVES, CPOL = TRUE, CLOCK IS HIGH UNTIL USED, FALSE CLOCK IS LOW UNTILL USED
-pub enum ClockSetup {RisingEdgeClockLow, FallingEdgeClockLow, RisingEdgeClockHigh, FallingEdgeClockHigh}
+pub enum ClockSetup {
+    RisingEdgeClockLow,
+    FallingEdgeClockLow,
+    RisingEdgeClockHigh,
+    FallingEdgeClockHigh
+}
 
 // Least Significant Bit First, Most Significiant Bit First
-pub enum BitFirst {Lsb, Msb}
+pub enum BitFirst {
+    Lsb,
+    Msb
+}
 
 // BR: Baud Rate Control 000: fPCLK/2 001: fPCLK/4 010: fPCLK/8 011: fPCLK/16 100: fPCLK/32 101: fPCLK/64 110: fPCLK/128 111: fPCLK/256
-pub enum BaudRateDiv {Clk2, Clk4, Clk8, Clk16, Clk32, Clk64, Clk128, Clk256}
+pub enum BaudRateDiv {
+    Clk2,
+    Clk4,
+    Clk8,
+    Clk16,
+    Clk32, 
+    Clk64,
+    Clk128,
+    Clk256
+}
 
 // These bits configure the data length for SPI transfers.
 // 0000: Not used 0001: Not used 0010: Not used 
@@ -317,7 +334,7 @@ impl Spi {
         return true; // IMPLEMENTATION OF TIMEOUT MIGHT BE NESSICARY
     }
 
-    pub fn error(&self) -> bool { // RETURN ONE OF THE THREE ERRORS
+    fn error(&self) -> bool { // RETURN ONE OF THE THREE ERRORS
         if pointer::get_ptr_vol_bit_u32(self.sr, CRCERR_BIT) || pointer::get_ptr_vol_bit_u32(self.sr, MODF_BIT) || pointer::get_ptr_vol_bit_u32(self.sr, OVR_BIT) {
             return true;
         } else {
@@ -325,7 +342,7 @@ impl Spi {
         }
     }
 
-    pub fn error_byte(&self) -> u8 { // RETURN ONE OF THE THREE ERRORS
+    fn error_byte(&self) -> u8 { // RETURN ONE OF THE THREE ERRORS
         if pointer::get_ptr_vol_bit_u32(self.sr, CRCERR_BIT) { 
             return 1;
         } else if pointer::get_ptr_vol_bit_u32(self.sr, MODF_BIT) {

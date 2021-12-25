@@ -32,7 +32,12 @@ const TXDR:     u32 = 0x28;
 
 /* Enumerations */
 /* Speed of I2C bus, 10KHz, 100KHz 400KHz or Plus mode */
-pub enum TimingMode {Sm10KHz, Sm100KHz, Fm400KHz, FmPlus}
+pub enum TimingMode {
+    Sm10KHz,
+    Sm100KHz,
+    Fm400KHz,
+    FmPlus
+}
 
     /* Register Masks */
 /* CR2 */

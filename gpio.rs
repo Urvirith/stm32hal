@@ -32,21 +32,55 @@ const BRR:      u32 = 0x28;
 
 /* Enumerations */
 // 00: Input mode     01: General purpose output mode     10: Alternate function mode     11: Analog mode (reset state)
-pub enum Mode {In, Out, Alt, An}
+pub enum Mode {
+    In,
+    Out,
+    Alt,
+    An
+}
 
 // 0: Output Push Pull     1: Output Open Drain
-pub enum OType {PushPull, OpenDrain}
+pub enum OType {
+    PushPull,
+    OpenDrain
+}
 
 // 00: Low speed     01: Medium speed     10: High speed     11: Very high speed
-pub enum OSpeed {Low, Medium, High, VeryHigh}
+pub enum OSpeed {
+    Low,
+    Medium,
+    High,
+    VeryHigh
+}
 
 // 00: No pull-up, pull-down     01: Pull-up     10: Pull-down     11: Reserved
-pub enum Pupd {NoPuPd, Pu, Pd}
+pub enum Pupd {
+    NoPuPd,
+    Pu,
+    Pd
+}
 
 /* 0000: AF0     0001: AF1     0010: AF2     0011: AF3     0100: AF4     0101: AF5
    0110: AF6     0111: AF7     1000: AF8     1001: AF9     1010: AF10    1011: AF11
    1100: AF12    1101: AF13    1110: AF14    1111: AF15                             */
-pub enum AltFunc {Af0, Af1, Af2, Af3, Af4, Af5, Af6, Af7, Af8, Af9, Af10, Af11, Af12, Af13, Af14, Af15}
+pub enum AltFunc {
+    Af0,
+    Af1,
+    Af2,
+    Af3,
+    Af4,
+    Af5,
+    Af6,
+    Af7,
+    Af8,
+    Af9,
+    Af10,
+    Af11,
+    Af12,
+    Af13,
+    Af14,
+    Af15
+}
 
 /* Register Masks */
 const MODER_MASK:       u32 = common::MASK_2_BIT;       /* Mode is mask required, here we set the mask to two bit 11 */

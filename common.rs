@@ -68,7 +68,20 @@ pub const MASK_31_BIT:  u32 = 0x7FFFFFFF;
 pub const MASK_32_BIT:  u32 = 0xFFFFFFFF;
 
 // Enumeration of avaliable ranges of clocks
-pub enum MsiRange {Clk100kHz, Clk200kHz, Clk400kHz, Clk800kHz, Clk1MHz, Clk2MHz, Clk4MHz, Clk8MHz, Clk16MHz, Clk24MHz, Clk32MHz, Clk48MHz}
+pub enum MsiRange {
+    Clk100kHz,
+    Clk200kHz,
+    Clk400kHz,
+    Clk800kHz,
+    Clk1MHz,
+    Clk2MHz,
+    Clk4MHz,
+    Clk8MHz,
+    Clk16MHz,
+    Clk24MHz,
+    Clk32MHz,
+    Clk48MHz
+}
 
 pub fn range(rng: MsiRange) -> u32 {
     return match rng {

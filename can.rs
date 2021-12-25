@@ -103,9 +103,17 @@ pub struct CanMsg {
 
 /* Enumerations */
 /* Baud Rates */
-pub enum BaudRate {Baud125kB, Baud250kB, Baud500kB, Baud1MB}
+pub enum BaudRate {
+    Baud125kB,
+    Baud250kB,
+    Baud500kB,
+    Baud1MB
+}
 
-pub enum FifoReg {Fifo0, Fifo1}
+pub enum FifoReg {
+    Fifo0,
+    Fifo1
+}
 
 pub fn baud(br: BaudRate) -> u32 {
     return match br {

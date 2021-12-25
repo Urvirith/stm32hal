@@ -50,10 +50,16 @@ const OR:       u32 = 0x50;
 
 /* Enumerations */
 // 0 = Continous, 1 = ONS (clears en bit)
-pub enum TimerType {Cont, Ons}
+pub enum TimerType {
+    Cont,
+    Ons
+}
 
 // 0 = Upcounter, 1 = Downcounter
-pub enum Direction {Upcount, Downcount}
+pub enum Direction {
+    Upcount,
+    Downcount
+}
 
 /* Register Masks */
 /* CR1 */

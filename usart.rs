@@ -61,13 +61,25 @@ const TDR:      u32 = 0x28;
 
 /* Enumerations */
 /* Oversample Size, 16-Bits Oversample, 8-Bits Oversample */
-pub enum OverSample {Oversample16, Oversample8}
+pub enum OverSample {
+    Oversample16,
+    Oversample8
+}
 
 /* Word Length 0 = 8-Bits, 1 = 9-Bits 2 = 7-Bits */
-pub enum WordLen {Bits8, Bits9, Bits7}
+pub enum WordLen {
+    Bits8,
+    Bits9,
+    Bits7
+}
 
 /* Stop Bit Length, 0 = 1-Bit, 1 = 0.5 Bit, 2 = 2 Bit, 3 = 1.5 Bit */
-pub enum StopLen {StopBit1, StopBit05, StopBit2, StopBit15}
+pub enum StopLen {
+    StopBit1,
+    StopBit05,
+    StopBit2,
+    StopBit15
+}
 
 /* Baud Rates */
 pub enum BaudRate {
