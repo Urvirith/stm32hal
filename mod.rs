@@ -10,4 +10,4 @@ pub mod spi;
 pub mod can;
 
 /* Private Modules */
-mod pointer;
+pub mod pointer;
